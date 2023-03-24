@@ -23,7 +23,7 @@ const TrackCreateScreen = ({ isFocused }) => {
   const [err] = useLocation(isFocused || recording, callback);
 
   return (
-    <SafeAreaView forceInset={{ top: 'always' }}>
+    <SafeAreaView style={styles.marginTop} forceInset={{ top: 'always' }}>
       <Text h2>Create a Track</Text>
       <Map />
       {err ? <Text>Please enable location services</Text> : null}
@@ -37,6 +37,10 @@ TrackCreateScreen.navigationOptions = {
   tabBarIcon: <FontAwesome name="plus" size={20} />
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  marginTop: {
+    marginTop: 50,
+  },
+});
 
 export default withNavigationFocus(TrackCreateScreen);
